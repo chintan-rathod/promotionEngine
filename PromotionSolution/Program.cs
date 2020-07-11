@@ -21,7 +21,7 @@ namespace PromotionSolution
     class PromotionProcessing
     {
         List<Product> lstProduct = new List<Product>();
-        List<Promotion> lstPromotion = new List<Promotion>();
+      static   List<Promotion> lstPromotion = new List<Promotion>();
         public PromotionProcessing()
         {
             lstProduct.Add(new Product() { SKUID = "A", Price = 50 });
@@ -34,6 +34,10 @@ namespace PromotionSolution
             lstPromotion.Add(new Promotion() { productskku = "C+D", Price = 30, isProductClub = true });
         }
 
+        public void AddPromotion(Promotion pro)
+        {
+            lstPromotion.Add(pro);
+        }
         public int GetFinalPriceAfterPromotion(List<ProductCart> lstcart)
         {
             int total = default(int);
